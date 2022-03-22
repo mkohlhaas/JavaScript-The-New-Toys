@@ -3,7 +3,7 @@ function closuresInLoopsES5() {
         (function(value) {
             setTimeout(function() {
                 console.log(value);
-            }, 10);
+            }, 1000 * counter);
         })(counter);
     }
 }

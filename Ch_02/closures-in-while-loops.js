@@ -4,7 +4,7 @@ function closuresInWhileLoops() {
         let inside = outside;
         setTimeout(function() {
             console.log("inside = " + inside + ", outside = " + outside);
-        }, 10);
+        }, 1000 * outside);
         ++outside;
     }
 }
