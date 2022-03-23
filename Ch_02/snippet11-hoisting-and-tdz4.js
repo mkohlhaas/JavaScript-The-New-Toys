@@ -8,6 +8,7 @@ function blockExample(str) {
             str = str.substring(0, p);
         }
     }
+    console.log(p);
     return p + str;
 }
 blockExample("Test X");

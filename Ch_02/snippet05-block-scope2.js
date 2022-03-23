@@ -6,5 +6,6 @@ function stayContained() {
         console.log(value);
     }
     console.log("Outside loop " + value); // ReferenceError: 'value' is not defined
+    console.log("i outside loop: " + i);
 }
 stayContained();
