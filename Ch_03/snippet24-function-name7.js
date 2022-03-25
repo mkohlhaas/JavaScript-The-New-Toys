@@ -1,3 +1,6 @@
+// assigning to an object property on an existing object does NOT set the function’s name
+
 const obj = {};
 obj.foo = function() {};
-console.log(obj.foo.name); // "" - there's no name
+// there's no name
+console.log(obj.foo.name); // ""

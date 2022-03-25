@@ -1,11 +1,15 @@
+// Trailing Commas in Parameter Lists and Function Calls
+
+// if you need to add more parameters or arguments, the line above does not show up as you don't need to add a comma - good for git diffs
+
 function example(
-    question, // (string) The question, must end with a question mark
-    answer, // (string) The answer, must end with appropriate punctuation
+    question,
+    answer, // trailing comma
 ) {
     console.log("question: " + question);
     console.log("answer: " + answer);
 }
 example(
     "Do you like building software?",
-    "Big time!",
+    "Big time!",  // trailing comma
 );
