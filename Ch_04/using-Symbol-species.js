@@ -15,8 +15,7 @@ class Base {
 
     clone() {
         // Uses `Symbol.species`
-        const ctor = this && this.constructor &&
-            this.constructor[Symbol.species] || Base;
+        const ctor = this && this.constructor && this.constructor[Symbol.species] || Base;
         return new ctor(this.data);
     }
 }
