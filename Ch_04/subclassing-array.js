@@ -1,33 +1,29 @@
 class Elements extends Array {
-    select(source) {
-        if (source) {
-            if (typeof source === "string") {
-                const list = document.querySelectorAll(source);
-                list.forEach(element => this.push(element));
-            } else {
-                this.push(source);
-            }
-        }
-        return this;
+  select(source) {
+    if (source) {
+      if (typeof source === "string") {
+        const list = document.querySelectorAll(source);
+        list.forEach(element => this.push(element));
+      } else {
+        this.push(source);
+      }
     }
+    return this;
+  }
 
-    style(props) {
-        this.forEach(element => {
-            for (const name in props) {
-                element.style[name] = props[name];
-            }
-        });
-        return this;
-    }
+  style(props) {
+    this.forEach(element => {
+      for (const name in props) {
+        element.style[name] = props[name];
+      }
+    });
+    return this;
+  }
 }
 
 // Usage
 new Elements()
-    .select("div")
-    .style({
-        color: "green"
-    })
-    .slice(1)
-    .style({
-        border: "1px solid red"
-    });
+  .select("div")
+  .style({ color: "green" })
+  .slice(1)  // Creates a new Elements instance (not an Array instance)
+  .style({ border: "1px solid red" });  // allows us to call style() - would not be possible if Array be returned

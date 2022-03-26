@@ -1,17 +1,17 @@
 class Base {
-    test() {
-        return "Base test";
-    }
+  test() {
+    return "Base test";
+  }
 }
 class Sub extends Base {
-    test() {
-        return "Sub test > " + super.test();
-    }
+  test() {
+    return "Sub test > " + super.test();
+  }
 }
 class SubSub extends Sub {
-    test() {
-        return "SubSub test > " + super.test();
-    }
+  test() {
+    return "SubSub test > " + super.test();
+  }
 }
 
 // Usage:
