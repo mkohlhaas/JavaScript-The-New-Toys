@@ -1,22 +1,32 @@
+// Object.getOwnPropertySymbols returns an array of Symbols for the object's own Symbol-named properties.
+//
+// Object.getOwnPropertyNames returns an array of strings for the string-named properties.
+//
+// Object.getOwnPropertyDescriptors returns an object with property descriptors for all
+// of the object's own properties (including non-enumerable ones and ones keyed with Symbols rather
+// than strings).
+
 const s = Symbol("example");
+
 const o1 = {
-    // A property named with a Symbol
-    [s]: "one",
-    // An accessor property
-    get example() {
-        return this[s];
-    },
-    set example(value) {
-        this[s] = value;
-    },
-    // A data property
-    data: "value"
+  [s]: "one", // property named with a Symbol
+
+  get example() { // accessor property
+    return this[s];
+  },
+
+  set example(value) {
+    this[s] = value;
+  },
+
+  data: "value" // data property
 };
+
 // A non-enumerable property
 Object.defineProperty(o1, "nonEnum", {
-    value: 42,
-    writable: true,
-    configurable: true
+  value: 42,
+  writable: true,
+  configurable: true
 });
 
 // Copy those properties to a new object
@@ -36,3 +46,7 @@ o3.example = "updated";
 console.log(o3[s]); // "one", because `example` is just a data property, not an accessor
 console.log(o3.nonEnum); // undefined
 console.log(o3.data); // "value"
+
+// Contrast this with using Object.assign in that same situation, which wouldn’ t copy the accessor
+// property as an accessor property; instead, it would copy the value returned by the accessor property
+// as of when Object.assign was called. It also wouldn’t copy the non-enumerable property.

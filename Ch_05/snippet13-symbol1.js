@@ -1,3 +1,5 @@
+// Use Symbol to Avoid Name Collision
+
 class Example1 { }
 
 class Example2 {

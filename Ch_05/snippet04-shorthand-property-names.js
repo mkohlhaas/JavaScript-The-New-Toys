@@ -1,3 +1,5 @@
+// Use Shorthand Syntax When Initializing a Property from a Variable with the Same Name
+
 function getMinMax(nums) {
   let min = Infinity;
   let max = -Infinity;

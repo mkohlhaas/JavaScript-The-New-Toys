@@ -1,8 +1,11 @@
+// Use Object.getPrototypeOf/setPrototypeOf Instead of __proto__
+
 const p1 = {
   greet: function() {
     console.log("p1 greet, name = " + this.name);
   }
 };
+
 const p2 = {
   greet: function() {
     console.log("p2 greet, name = " + this.name);
