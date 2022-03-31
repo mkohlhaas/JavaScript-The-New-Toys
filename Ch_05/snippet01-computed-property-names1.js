@@ -1,5 +1,5 @@
-var name = "answer";
+var antwort = "answer";
 var obj = {
-    [name]: 42
+  [antwort]: 42
 };
 console.log(obj); // {answer: 42}

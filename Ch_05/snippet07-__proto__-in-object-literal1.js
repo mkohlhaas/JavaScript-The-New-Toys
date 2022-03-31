@@ -1,9 +1,11 @@
 const p = {
-    hi() {
-        console.log("hi");
-    }
+  hi() {
+    console.log("hi");
+  }
 };
+
 const obj = {
-    __proto__: p
+  __proto__: p
 };
+
 obj.hi(); // "hi"
