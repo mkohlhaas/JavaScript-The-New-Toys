@@ -1,6 +1,6 @@
 function* example() {
-    let a = (yield) + 2 + 30;
-    return a;
+  let a = (yield) + 2 + 30;  // you can also use parentheses around the yield
+  return a;
 }
 const gen = example();
 console.log(gen.next()); // {value: undefined, done: false}

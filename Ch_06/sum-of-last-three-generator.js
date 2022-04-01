@@ -1,18 +1,19 @@
 function* sumThree() {
-    const lastThree = [];
-    let sum = 0;
-    while (true) {
-        const value = yield sum;
-        lastThree.push(value);
-        sum += value;
-        if (lastThree.length > 3) {
-            sum -= lastThree.shift();
-        }
+  const lastThree = [];
+  let sum = 0;
+  while (true) {
+    const value = yield sum;
+    lastThree.push(value);
+    sum += value;
+    // console.log(lastThree);
+    if (lastThree.length > 3) {
+      sum -= lastThree.shift();
     }
+  }
 }
 
 const it = sumThree();
-console.log(it.next().value); // 0  (there haven't been any values passed in yet)
+console.log(it.next().value);  // 0  (there haven't been any values passed in yet)
 console.log(it.next(1).value); // 1  (1)
 console.log(it.next(7).value); // 8  (1 + 7)
 console.log(it.next(4).value); // 12 (1 + 7 + 4)
